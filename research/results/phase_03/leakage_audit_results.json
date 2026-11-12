@@ -1,0 +1,160 @@
+{
+  "audit_metadata": {
+    "phase": "Phase 03 (Temporal Splits & Leakage Audit)",
+    "status": "PASS",
+    "date": "2026-11-12"
+  },
+  "universe_partitions": {
+    "core_full_history_count": 146,
+    "core_full_history_sample": [
+      "AAPL",
+      "ABT",
+      "ACL.JO",
+      "ACT.JO",
+      "ADW.JO",
+      "AEL.JO",
+      "AFT.JO",
+      "AGL.JO",
+      "AHL.JO",
+      "AMT"
+    ],
+    "secondary_count": 4,
+    "secondary_tickers": [
+      "ASC.JO",
+      "BHARTIHEXA.BSE",
+      "BIK.JO",
+      "NSTG"
+    ]
+  },
+  "split_specifications": {
+    "protocol_version": "1.0",
+    "created_date": "2026-11-12",
+    "forecast_horizon_H": 5,
+    "forecast_horizon_H_alt": 1,
+    "context_window_W": 20,
+    "context_window_W_alt": 60,
+    "purge_gap_days": 5,
+    "embargo_gap_days": 5,
+    "universe": {
+      "core_full_history_count": 146,
+      "secondary_count": 4,
+      "secondary_tickers": [
+        "ASC.JO",
+        "BHARTIHEXA.BSE",
+        "BIK.JO",
+        "NSTG"
+      ]
+    },
+    "splits": {
+      "train": {
+        "start_date": "2022-03-01",
+        "end_date": "2024-03-29",
+        "calendar_days_label": "2022-03 to 2024-03 (~25 months)"
+      },
+      "purge_gap_1": {
+        "start_date": "2024-04-01",
+        "end_date": "2024-04-08",
+        "trading_days": 5,
+        "purpose": "Purge gap to guarantee zero target-to-input overlap between train targets and validation inputs"
+      },
+      "validation": {
+        "start_date": "2024-04-09",
+        "end_date": "2024-10-31",
+        "calendar_days_label": "2024-04 to 2024-10 (~7 months)"
+      },
+      "purge_gap_2": {
+        "start_date": "2024-11-01",
+        "end_date": "2024-11-08",
+        "trading_days": 5,
+        "purpose": "Purge gap to guarantee zero target-to-input overlap between validation targets and test inputs"
+      },
+      "test": {
+        "start_date": "2024-11-11",
+        "end_date": "2025-05-30",
+        "calendar_days_label": "2024-11 to 2025-05 (~7 months)"
+      }
+    },
+    "primary_forecast_horizon_description": "H = 5 trading days (one trading week, frozen primary horizon)"
+  },
+  "leakage_test_suite": [
+    {
+      "test_id": "LT-01",
+      "name": "Split Boundary Temporal Ordering",
+      "passed": true,
+      "details": "Train End (2024-03-29) < Val Start (2024-04-09) < Val End (2024-10-31) < Test Start (2024-11-11)"
+    },
+    {
+      "test_id": "LT-02",
+      "name": "Purge Buffer Sufficiency",
+      "passed": true,
+      "details": "Train-Val calendar gap = 11 days; Val-Test calendar gap = 11 days (>= 5 days required)"
+    },
+    {
+      "test_id": "LT-03",
+      "name": "Zero Target-Input Boundary Overlap",
+      "passed": true,
+      "details": "Overlap violations across all core tickers: 0"
+    },
+    {
+      "test_id": "LT-04",
+      "name": "Past-Only Normalization Invariance",
+      "passed": true,
+      "details": "Context window normalization depends strictly on [t-W+1, t], perfectly invariant to future t+H"
+    },
+    {
+      "test_id": "LT-05",
+      "name": "Past-Only Regime Conditioning",
+      "passed": true,
+      "details": "Regime indicators (volatility / trend) computed strictly on backward rolling history [t-W, t], zero future visibility"
+    },
+    {
+      "test_id": "LT-06",
+      "name": "Cross-Market Non-Lookahead Temporal Alignment",
+      "passed": true,
+      "details": "Cross-market prompting enforces strict t_foreign <= t_local calendar conditioning"
+    }
+  ],
+  "slm_pretraining_contamination_audit": [
+    {
+      "model_family": "Llama 3.2 (1B, 3B)",
+      "organization": "Meta",
+      "reported_cutoff": "March 2024",
+      "overlap_with_train": "High (train is 2022-03 to 2024-03)",
+      "overlap_with_val": "Minimal (val is 2024-04 to 2024-10)",
+      "overlap_with_test": "ZERO (test is 2024-11 to 2025-05)",
+      "contamination_risk_on_test": "SAFE (Test period occurs strictly AFTER pretraining cutoff)",
+      "scientific_assessment": "Test period occurs after reported cutoff; reduces direct memorization risk but complete non-contamination cannot be independently guaranteed."
+    },
+    {
+      "model_family": "Qwen 2.5 (1.5B, 3B, 7B)",
+      "organization": "Alibaba Cloud",
+      "reported_cutoff": "September 2024",
+      "overlap_with_train": "High",
+      "overlap_with_val": "High",
+      "overlap_with_test": "ZERO (test is 2024-11 to 2025-05)",
+      "contamination_risk_on_test": "SAFE (Test period starts November 2024, strictly AFTER cutoff)",
+      "scientific_assessment": "Test period occurs after reported cutoff; reduces direct memorization risk but complete non-contamination cannot be independently guaranteed."
+    },
+    {
+      "model_family": "SmolLM2 (135M, 360M, 1.7B)",
+      "organization": "HuggingFace",
+      "reported_cutoff": "Mid 2024",
+      "overlap_with_train": "High",
+      "overlap_with_val": "Partial",
+      "overlap_with_test": "ZERO (test is 2024-11 to 2025-05)",
+      "contamination_risk_on_test": "SAFE (Test period occurs strictly AFTER pretraining cutoff)",
+      "scientific_assessment": "Test period occurs after reported cutoff; reduces direct memorization risk but complete non-contamination cannot be independently guaranteed."
+    },
+    {
+      "model_family": "Gemma 2 (2B, 9B)",
+      "organization": "Google",
+      "reported_cutoff": "March 2024",
+      "overlap_with_train": "High",
+      "overlap_with_val": "Minimal",
+      "overlap_with_test": "ZERO (test is 2024-11 to 2025-05)",
+      "contamination_risk_on_test": "SAFE (Test period occurs strictly AFTER pretraining cutoff)",
+      "scientific_assessment": "Test period occurs after reported cutoff; reduces direct memorization risk but complete non-contamination cannot be independently guaranteed."
+    }
+  ],
+  "slm_pretraining_contamination_scientific_statement": "The test period occurs after the reported training cutoff dates of the candidate SLM checkpoints, reducing the risk of direct temporal memorization of the evaluation period. However, complete pretraining-data non-contamination cannot be independently guaranteed."
+}

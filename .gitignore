@@ -1,0 +1,73 @@
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+secrets.json
+
+# Raw & Processed Datasets (Must not be tracked)
+data/raw/
+data/processed/
+
+# Run artifacts, outputs, figures & logs
+/results/
+/logs/
+/figures/
+
+# Model checkpoints & weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+checkpoints/
+
+# Local model & cache directories
+.cache/
+hf_cache/
+models/
+huggingface/
+wandb/
+.pytest_cache/
+.coverage
+htmlcov/

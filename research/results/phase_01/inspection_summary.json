@@ -1,0 +1,126 @@
+{
+  "phase": "phase_01",
+  "title": "Data Inspection",
+  "date_completed": "2026-11-12",
+  "datasets": {
+    "india": {
+      "file": "data/raw/Indian-Final-Data-3month.xlsx",
+      "file_type": "xlsx",
+      "rows": 39383,
+      "columns": 10,
+      "column_names": [
+        "Date",
+        "Sector",
+        "Ticker",
+        "Cap Size",
+        "Country",
+        "1. open",
+        "2. high",
+        "3. low",
+        "4. close",
+        "5. volume"
+      ],
+      "date_column": "Date",
+      "min_date": "2022-03-02",
+      "max_date": "2025-05-30",
+      "missing_values": {
+        "Date": 0,
+        "Sector": 0,
+        "Ticker": 0,
+        "Cap Size": 0,
+        "Country": 0,
+        "1. open": 0,
+        "2. high": 0,
+        "3. low": 0,
+        "4. close": 0,
+        "5. volume": 0
+      },
+      "unique_tickers": 50,
+      "unique_sectors": 10,
+      "unique_cap_sizes": 3,
+      "unique_countries": 1,
+      "country_values": [
+        "India"
+      ],
+      "price_columns": [
+        "1. open",
+        "2. high",
+        "3. low",
+        "4. close"
+      ],
+      "volume_columns": [
+        "5. volume"
+      ]
+    },
+    "jse": {
+      "file": "data/raw/JSE_data.csv",
+      "file_type": "csv",
+      "rows": 39893,
+      "columns": 6,
+      "column_names": [
+        "",
+        "Date",
+        "Ticker",
+        "Sector",
+        "Country",
+        "Close"
+      ],
+      "date_column": "Date",
+      "min_date": "2022-03-01",
+      "max_date": "2025-05-30",
+      "missing_values": {
+        "": 0,
+        "Date": 0,
+        "Ticker": 0,
+        "Sector": 0,
+        "Country": 0,
+        "Close": 0
+      },
+      "unique_tickers": 50,
+      "unique_sectors": 10,
+      "unique_countries": 1,
+      "country_values": [
+        "USA"
+      ],
+      "price_columns": [
+        "Close"
+      ],
+      "notes": "Ticker suffix .JO indicates Johannesburg Stock Exchange, but raw Country column indicates USA."
+    },
+    "us": {
+      "file": "data/raw/US_data.csv",
+      "file_type": "csv",
+      "rows": 40567,
+      "columns": 6,
+      "column_names": [
+        "",
+        "Date",
+        "Ticker",
+        "Sector",
+        "Country",
+        "Close"
+      ],
+      "date_column": "Date",
+      "min_date": "2022-03-01",
+      "max_date": "2025-05-30",
+      "missing_values": {
+        "": 0,
+        "Date": 0,
+        "Ticker": 0,
+        "Sector": 0,
+        "Country": 0,
+        "Close": 0
+      },
+      "unique_tickers": 50,
+      "unique_sectors": 10,
+      "unique_countries": 1,
+      "country_values": [
+        "USA"
+      ],
+      "price_columns": [
+        "Close"
+      ]
+    }
+  },
+  "gate_status": "PASS"
+}

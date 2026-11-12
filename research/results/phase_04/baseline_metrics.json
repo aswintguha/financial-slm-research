@@ -1,0 +1,792 @@
+{
+  "mase_specification": {
+    "denominator_description": "Mean Absolute Error of the in-sample naive forecast (Persistence r_hat=0) computed strictly on training data",
+    "training_naive_mae_h5": 0.038318,
+    "training_naive_mae_h1": 0.01604,
+    "leakage_protection": "Denominator strictly computed on training split (2022-03-01 to 2024-03-29); zero validation/test visibility"
+  },
+  "H5_Primary": {
+    "train": {
+      "Persistence": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.038318,
+          "rmse": 0.083894,
+          "nrmse": 0.01457,
+          "mase": 1.0,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 4.9421,
+          "bias": -0.000692,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "persistence_replaced": {
+          "mae": 0.038318,
+          "rmse": 0.083894,
+          "nrmse": 0.01457,
+          "mase": 1.0,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 4.9421,
+          "bias": -0.000692,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Historical_Mean": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.045326,
+          "rmse": 0.09486,
+          "nrmse": 0.016475,
+          "mase": 1.1829,
+          "directional_accuracy": 49.5099,
+          "directional_accuracy_label": "49.5099%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000255,
+          "relative_rmse_vs_persistence": 1.130713
+        },
+        "persistence_replaced": {
+          "mae": 0.045326,
+          "rmse": 0.09486,
+          "nrmse": 0.016475,
+          "mase": 1.1829,
+          "directional_accuracy": 49.5099,
+          "directional_accuracy_label": "49.5099%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000255,
+          "relative_rmse_vs_persistence": 1.130713
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Moving_Average_5": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.057991,
+          "rmse": 0.122172,
+          "nrmse": 0.021218,
+          "mase": 1.5134,
+          "directional_accuracy": 49.3232,
+          "directional_accuracy_label": "49.3232%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 4.3e-05,
+          "relative_rmse_vs_persistence": 1.456266
+        },
+        "persistence_replaced": {
+          "mae": 0.057991,
+          "rmse": 0.122172,
+          "nrmse": 0.021218,
+          "mase": 1.5134,
+          "directional_accuracy": 49.3232,
+          "directional_accuracy_label": "49.3232%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 4.3e-05,
+          "relative_rmse_vs_persistence": 1.456266
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Drift": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.045326,
+          "rmse": 0.09486,
+          "nrmse": 0.016475,
+          "mase": 1.1829,
+          "directional_accuracy": 49.4454,
+          "directional_accuracy_label": "49.4454%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000255,
+          "relative_rmse_vs_persistence": 1.130713
+        },
+        "persistence_replaced": {
+          "mae": 0.045326,
+          "rmse": 0.09486,
+          "nrmse": 0.016475,
+          "mase": 1.1829,
+          "directional_accuracy": 49.4454,
+          "directional_accuracy_label": "49.4454%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000255,
+          "relative_rmse_vs_persistence": 1.130713
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      }
+    },
+    "val": {
+      "Persistence": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.037751,
+          "rmse": 0.093042,
+          "nrmse": 0.017561,
+          "mase": 0.9852,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 4.8795,
+          "bias": -0.005136,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "persistence_replaced": {
+          "mae": 0.037751,
+          "rmse": 0.093042,
+          "nrmse": 0.017561,
+          "mase": 0.9852,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 4.8795,
+          "bias": -0.005136,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Historical_Mean": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.045683,
+          "rmse": 0.105228,
+          "nrmse": 0.019861,
+          "mase": 1.1922,
+          "directional_accuracy": 48.1546,
+          "directional_accuracy_label": "48.1546%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.001144,
+          "relative_rmse_vs_persistence": 1.130973
+        },
+        "persistence_replaced": {
+          "mae": 0.045683,
+          "rmse": 0.105228,
+          "nrmse": 0.019861,
+          "mase": 1.1922,
+          "directional_accuracy": 48.1546,
+          "directional_accuracy_label": "48.1546%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.001144,
+          "relative_rmse_vs_persistence": 1.130973
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Moving_Average_5": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.05819,
+          "rmse": 0.133933,
+          "nrmse": 0.025278,
+          "mase": 1.5186,
+          "directional_accuracy": 47.7359,
+          "directional_accuracy_label": "47.7359%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -3.2e-05,
+          "relative_rmse_vs_persistence": 1.43949
+        },
+        "persistence_replaced": {
+          "mae": 0.05819,
+          "rmse": 0.133933,
+          "nrmse": 0.025278,
+          "mase": 1.5186,
+          "directional_accuracy": 47.7359,
+          "directional_accuracy_label": "47.7359%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -3.2e-05,
+          "relative_rmse_vs_persistence": 1.43949
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Drift": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.045683,
+          "rmse": 0.105228,
+          "nrmse": 0.019861,
+          "mase": 1.1922,
+          "directional_accuracy": 48.0391,
+          "directional_accuracy_label": "48.0391%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.001144,
+          "relative_rmse_vs_persistence": 1.130973
+        },
+        "persistence_replaced": {
+          "mae": 0.045683,
+          "rmse": 0.105228,
+          "nrmse": 0.019861,
+          "mase": 1.1922,
+          "directional_accuracy": 48.0391,
+          "directional_accuracy_label": "48.0391%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.001144,
+          "relative_rmse_vs_persistence": 1.130973
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      }
+    },
+    "test": {
+      "Persistence": {
+        "total_predictions": 19130,
+        "valid_predictions": 19130,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.043154,
+          "rmse": 0.088999,
+          "nrmse": 0.025442,
+          "mase": 1.1262,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 4.9451,
+          "bias": 0.002729,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "persistence_replaced": {
+          "mae": 0.043154,
+          "rmse": 0.088999,
+          "nrmse": 0.025442,
+          "mase": 1.1262,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 4.9451,
+          "bias": 0.002729,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Historical_Mean": {
+        "total_predictions": 19130,
+        "valid_predictions": 19130,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.052582,
+          "rmse": 0.101753,
+          "nrmse": 0.029088,
+          "mase": 1.3723,
+          "directional_accuracy": 46.1735,
+          "directional_accuracy_label": "46.1735%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.00091,
+          "relative_rmse_vs_persistence": 1.143305
+        },
+        "persistence_replaced": {
+          "mae": 0.052582,
+          "rmse": 0.101753,
+          "nrmse": 0.029088,
+          "mase": 1.3723,
+          "directional_accuracy": 46.1735,
+          "directional_accuracy_label": "46.1735%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.00091,
+          "relative_rmse_vs_persistence": 1.143305
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Moving_Average_5": {
+        "total_predictions": 19130,
+        "valid_predictions": 19130,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.067248,
+          "rmse": 0.132908,
+          "nrmse": 0.037994,
+          "mase": 1.755,
+          "directional_accuracy": 48.4893,
+          "directional_accuracy_label": "48.4893%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.000298,
+          "relative_rmse_vs_persistence": 1.493365
+        },
+        "persistence_replaced": {
+          "mae": 0.067248,
+          "rmse": 0.132908,
+          "nrmse": 0.037994,
+          "mase": 1.755,
+          "directional_accuracy": 48.4893,
+          "directional_accuracy_label": "48.4893%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.000298,
+          "relative_rmse_vs_persistence": 1.493365
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Drift": {
+        "total_predictions": 19130,
+        "valid_predictions": 19130,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.052582,
+          "rmse": 0.101753,
+          "nrmse": 0.029088,
+          "mase": 1.3723,
+          "directional_accuracy": 46.4245,
+          "directional_accuracy_label": "46.4245%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.00091,
+          "relative_rmse_vs_persistence": 1.143305
+        },
+        "persistence_replaced": {
+          "mae": 0.052582,
+          "rmse": 0.101753,
+          "nrmse": 0.029088,
+          "mase": 1.3723,
+          "directional_accuracy": 46.4245,
+          "directional_accuracy_label": "46.4245%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.00091,
+          "relative_rmse_vs_persistence": 1.143305
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      }
+    }
+  },
+  "H1_Secondary": {
+    "train": {
+      "Persistence": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.01604,
+          "rmse": 0.039597,
+          "nrmse": 0.007105,
+          "mase": 1.0,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 8.9493,
+          "bias": -0.000157,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "persistence_replaced": {
+          "mae": 0.01604,
+          "rmse": 0.039597,
+          "nrmse": 0.007105,
+          "mase": 1.0,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 8.9493,
+          "bias": -0.000157,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Historical_Mean": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.017147,
+          "rmse": 0.040672,
+          "nrmse": 0.007298,
+          "mase": 1.069,
+          "directional_accuracy": 47.4782,
+          "directional_accuracy_label": "47.4782%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 3.2e-05,
+          "relative_rmse_vs_persistence": 1.027149
+        },
+        "persistence_replaced": {
+          "mae": 0.017147,
+          "rmse": 0.040672,
+          "nrmse": 0.007298,
+          "mase": 1.069,
+          "directional_accuracy": 47.4782,
+          "directional_accuracy_label": "47.4782%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 3.2e-05,
+          "relative_rmse_vs_persistence": 1.027149
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Moving_Average_5": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.018857,
+          "rmse": 0.043745,
+          "nrmse": 0.007849,
+          "mase": 1.1756,
+          "directional_accuracy": 48.4295,
+          "directional_accuracy_label": "48.4295%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -1e-05,
+          "relative_rmse_vs_persistence": 1.104755
+        },
+        "persistence_replaced": {
+          "mae": 0.018857,
+          "rmse": 0.043745,
+          "nrmse": 0.007849,
+          "mase": 1.1756,
+          "directional_accuracy": 48.4295,
+          "directional_accuracy_label": "48.4295%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -1e-05,
+          "relative_rmse_vs_persistence": 1.104755
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Drift": {
+        "total_predictions": 72844,
+        "valid_predictions": 72844,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.017147,
+          "rmse": 0.040672,
+          "nrmse": 0.007298,
+          "mase": 1.069,
+          "directional_accuracy": 47.6621,
+          "directional_accuracy_label": "47.6621%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 3.2e-05,
+          "relative_rmse_vs_persistence": 1.027149
+        },
+        "persistence_replaced": {
+          "mae": 0.017147,
+          "rmse": 0.040672,
+          "nrmse": 0.007298,
+          "mase": 1.069,
+          "directional_accuracy": 47.6621,
+          "directional_accuracy_label": "47.6621%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 3.2e-05,
+          "relative_rmse_vs_persistence": 1.027149
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      }
+    },
+    "val": {
+      "Persistence": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.015667,
+          "rmse": 0.043409,
+          "nrmse": 0.008193,
+          "mase": 0.9767,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 8.8591,
+          "bias": -0.000877,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "persistence_replaced": {
+          "mae": 0.015667,
+          "rmse": 0.043409,
+          "nrmse": 0.008193,
+          "mase": 0.9767,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 8.8591,
+          "bias": -0.000877,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Historical_Mean": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.016836,
+          "rmse": 0.044588,
+          "nrmse": 0.008416,
+          "mase": 1.0496,
+          "directional_accuracy": 46.9419,
+          "directional_accuracy_label": "46.9419%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000379,
+          "relative_rmse_vs_persistence": 1.02716
+        },
+        "persistence_replaced": {
+          "mae": 0.016836,
+          "rmse": 0.044588,
+          "nrmse": 0.008416,
+          "mase": 1.0496,
+          "directional_accuracy": 46.9419,
+          "directional_accuracy_label": "46.9419%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000379,
+          "relative_rmse_vs_persistence": 1.02716
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Moving_Average_5": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.018429,
+          "rmse": 0.047725,
+          "nrmse": 0.009007,
+          "mase": 1.1489,
+          "directional_accuracy": 49.4153,
+          "directional_accuracy_label": "49.4153%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000143,
+          "relative_rmse_vs_persistence": 1.099426
+        },
+        "persistence_replaced": {
+          "mae": 0.018429,
+          "rmse": 0.047725,
+          "nrmse": 0.009007,
+          "mase": 1.1489,
+          "directional_accuracy": 49.4153,
+          "directional_accuracy_label": "49.4153%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000143,
+          "relative_rmse_vs_persistence": 1.099426
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Drift": {
+        "total_predictions": 20781,
+        "valid_predictions": 20781,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.016836,
+          "rmse": 0.044588,
+          "nrmse": 0.008416,
+          "mase": 1.0496,
+          "directional_accuracy": 47.1777,
+          "directional_accuracy_label": "47.1777%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000379,
+          "relative_rmse_vs_persistence": 1.02716
+        },
+        "persistence_replaced": {
+          "mae": 0.016836,
+          "rmse": 0.044588,
+          "nrmse": 0.008416,
+          "mase": 1.0496,
+          "directional_accuracy": 47.1777,
+          "directional_accuracy_label": "47.1777%",
+          "raw_zero_return_hit_rate": null,
+          "bias": 0.000379,
+          "relative_rmse_vs_persistence": 1.02716
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      }
+    },
+    "test": {
+      "Persistence": {
+        "total_predictions": 19714,
+        "valid_predictions": 19714,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.01735,
+          "rmse": 0.041838,
+          "nrmse": 0.012007,
+          "mase": 1.0816,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 9.1559,
+          "bias": 0.000567,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "persistence_replaced": {
+          "mae": 0.01735,
+          "rmse": 0.041838,
+          "nrmse": 0.012007,
+          "mase": 1.0816,
+          "directional_accuracy": null,
+          "directional_accuracy_label": "N/A \u2014 zero-return forecast has no directional prediction",
+          "raw_zero_return_hit_rate": 9.1559,
+          "bias": 0.000567,
+          "relative_rmse_vs_persistence": 1.0
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Historical_Mean": {
+        "total_predictions": 19714,
+        "valid_predictions": 19714,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.018763,
+          "rmse": 0.043105,
+          "nrmse": 0.01237,
+          "mase": 1.1697,
+          "directional_accuracy": 45.7036,
+          "directional_accuracy_label": "45.7036%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.000111,
+          "relative_rmse_vs_persistence": 1.030283
+        },
+        "persistence_replaced": {
+          "mae": 0.018763,
+          "rmse": 0.043105,
+          "nrmse": 0.01237,
+          "mase": 1.1697,
+          "directional_accuracy": 45.7036,
+          "directional_accuracy_label": "45.7036%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.000111,
+          "relative_rmse_vs_persistence": 1.030283
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Moving_Average_5": {
+        "total_predictions": 19714,
+        "valid_predictions": 19714,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.020706,
+          "rmse": 0.046386,
+          "nrmse": 0.013312,
+          "mase": 1.2909,
+          "directional_accuracy": 48.3869,
+          "directional_accuracy_label": "48.3869%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -3.9e-05,
+          "relative_rmse_vs_persistence": 1.108705
+        },
+        "persistence_replaced": {
+          "mae": 0.020706,
+          "rmse": 0.046386,
+          "nrmse": 0.013312,
+          "mase": 1.2909,
+          "directional_accuracy": 48.3869,
+          "directional_accuracy_label": "48.3869%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -3.9e-05,
+          "relative_rmse_vs_persistence": 1.108705
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      },
+      "Drift": {
+        "total_predictions": 19714,
+        "valid_predictions": 19714,
+        "invalid_predictions": 0,
+        "valid_output_pct": 100.0,
+        "common_valid_subset": {
+          "mae": 0.018763,
+          "rmse": 0.043105,
+          "nrmse": 0.01237,
+          "mase": 1.1697,
+          "directional_accuracy": 46.3326,
+          "directional_accuracy_label": "46.3326%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.000111,
+          "relative_rmse_vs_persistence": 1.030283
+        },
+        "persistence_replaced": {
+          "mae": 0.018763,
+          "rmse": 0.043105,
+          "nrmse": 0.01237,
+          "mase": 1.1697,
+          "directional_accuracy": 46.3326,
+          "directional_accuracy_label": "46.3326%",
+          "raw_zero_return_hit_rate": null,
+          "bias": -0.000111,
+          "relative_rmse_vs_persistence": 1.030283
+        },
+        "efficiency": {
+          "inference_time_sec": null,
+          "memory_usage_mb": null
+        }
+      }
+    }
+  }
+}

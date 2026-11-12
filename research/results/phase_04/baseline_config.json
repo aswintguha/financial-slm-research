@@ -1,0 +1,40 @@
+{
+  "experiment_id": "EXP04_BASELINES_EVAL_v1",
+  "date": "2026-11-12",
+  "protocol": "Phased Research Protocol v1.0",
+  "horizons": {
+    "primary": 5,
+    "secondary": 1
+  },
+  "context_window": 20,
+  "universe": "Predefined Core Full-History Universe (146 stocks)",
+  "splits": {
+    "train": {
+      "start": "2022-03-01",
+      "end": "2024-03-29"
+    },
+    "val": {
+      "start": "2024-04-09",
+      "end": "2024-10-31"
+    },
+    "test": {
+      "start": "2024-11-11",
+      "end": "2025-05-30"
+    }
+  },
+  "baselines_implemented": [
+    "Persistence",
+    "Historical_Mean",
+    "Moving_Average_5",
+    "Drift"
+  ],
+  "metrics_reported": [
+    "MAE",
+    "RMSE",
+    "NRMSE",
+    "Relative_RMSE",
+    "Directional_Accuracy",
+    "Bias",
+    "Valid_Pct"
+  ]
+}
