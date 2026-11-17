@@ -1,0 +1,46 @@
+{
+  "model_name": "Gemma 2 2B IT",
+  "model_id": "google/gemma-2-2b-it",
+  "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "license": "gemma",
+  "parameter_count": 2614341888,
+  "status": "COMPLETED",
+  "samples_attempted": 20781,
+  "samples_completed": 20781,
+  "strict_valid_count": 20781,
+  "strict_valid_pct": 100.0,
+  "invalid_count": 0,
+  "invalid_pct": 0.0,
+  "fallback_extracted_count": 0,
+  "fallback_extracted_pct": 0.0,
+  "economic_bound_violations": 0,
+  "validation_eligibility_95pct_pass": true,
+  "forecasting_winner_declared": false,
+  "timing": {
+    "load_time_sec": 3.55,
+    "total_inference_time_sec": 32207.63,
+    "generation_only_time_sec": 32180.65,
+    "total_generated_tokens": 306191,
+    "mean_tokens_per_sec": 9.51
+  },
+  "persistence_baseline": {
+    "rmse": 0.093042,
+    "mae": 0.037751
+  },
+  "persistence_replaced": {
+    "rmse": 0.093267,
+    "mae": 0.038545,
+    "rel_rmse_vs_persistence": 1.002416
+  },
+  "common_valid_subset": {
+    "valid_samples": 20781,
+    "rmse": 0.093267,
+    "mae": 0.038545,
+    "persistence_rmse": 0.093042,
+    "persistence_mae": 0.037751,
+    "rel_rmse_vs_persistence": 1.002416,
+    "directional_accuracy_pct": 53.37,
+    "directional_accuracy_correct": 10531,
+    "directional_accuracy_eligible": 19733
+  }
+}

@@ -1,0 +1,3713 @@
+{
+  "experiment": "Gate 5.3 (E02: Prompt and Representation Sensitivity Analysis)",
+  "timestamp_utc": "2026-11-13T20:12:05Z",
+  "model": {
+    "id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "device": "cpu",
+    "precision": "bfloat16",
+    "decoding": "greedy",
+    "max_new_tokens": 32
+  },
+  "dev_split_allocation": {
+    "training_period_start": "2022-03-01",
+    "training_period_end": "2024-03-29",
+    "training_total_common_sessions": 483,
+    "dev_segment_10pct_common_sessions": 48,
+    "dev_segment_common_session_range": [
+      "2024-01-12",
+      "2024-03-28"
+    ],
+    "eligible_common_origin_sessions_count": 44,
+    "eligible_common_origin_session_range": [
+      "2024-01-12",
+      "2024-03-20"
+    ],
+    "target_boundary_verified": "All 120 target dates conclude <= 2024-03-28, inside training bounds",
+    "sampled_origin_dates": [
+      "2024-01-12",
+      "2024-02-06",
+      "2024-02-28",
+      "2024-03-20"
+    ],
+    "tickers_count": 30,
+    "samples_per_condition": 120,
+    "total_generations": 360
+  },
+  "condition_summaries": {
+    "Template_A": {
+      "condition": "Template_A",
+      "sample_count": 120,
+      "strict_valid_count": 0,
+      "strict_valid_pct": 0.0,
+      "fallback_extracted_count": 120,
+      "fallback_extracted_pct": 100.0,
+      "economic_bound_violations": 0,
+      "persistence_rmse": 0.049411,
+      "persistence_replaced": {
+        "rmse": 0.049411,
+        "mae": 0.031649,
+        "rel_rmse_vs_persistence": 1.0
+      },
+      "common_valid_subset": {
+        "valid_samples": 0,
+        "rmse": null,
+        "mae": null,
+        "directional_accuracy_pct": null
+      },
+      "duration_seconds": 119.41
+    },
+    "Template_B": {
+      "condition": "Template_B",
+      "sample_count": 120,
+      "strict_valid_count": 27,
+      "strict_valid_pct": 22.5,
+      "fallback_extracted_count": 93,
+      "fallback_extracted_pct": 77.5,
+      "economic_bound_violations": 0,
+      "persistence_rmse": 0.049411,
+      "persistence_replaced": {
+        "rmse": 0.049411,
+        "mae": 0.031649,
+        "rel_rmse_vs_persistence": 1.000003
+      },
+      "common_valid_subset": {
+        "valid_samples": 27,
+        "rmse": 0.034162,
+        "mae": 0.024095,
+        "directional_accuracy_pct": 29.63
+      },
+      "duration_seconds": 124.13
+    },
+    "Template_C": {
+      "condition": "Template_C",
+      "sample_count": 120,
+      "strict_valid_count": 0,
+      "strict_valid_pct": 0.0,
+      "fallback_extracted_count": 120,
+      "fallback_extracted_pct": 100.0,
+      "economic_bound_violations": 0,
+      "persistence_rmse": 0.049411,
+      "persistence_replaced": {
+        "rmse": 0.049411,
+        "mae": 0.031649,
+        "rel_rmse_vs_persistence": 1.0
+      },
+      "common_valid_subset": {
+        "valid_samples": 0,
+        "rmse": null,
+        "mae": null,
+        "directional_accuracy_pct": null
+      },
+      "duration_seconds": 121.91
+    }
+  },
+  "sample_generations": {
+    "Template_A": [
+      {
+        "sample_idx": 0,
+        "ticker": "ABT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for ABT (United States, Healthcare) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 1,
+        "ticker": "ABT",
+        "origin_date": "2024-02-06",
+        "raw_text": "Analyzing the historical closing price sequence for ABT (United States, Healthcare) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 2,
+        "ticker": "ABT",
+        "origin_date": "2024-02-28",
+        "raw_text": "Analyzing the historical closing price sequence for ABT (United States, Healthcare) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 3,
+        "ticker": "ABT",
+        "origin_date": "2024-03-20",
+        "raw_text": "Analyzing the historical closing price sequence for ABT (United States, Healthcare) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 4,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AHL over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 5,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AHL over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 6,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "Analyzing the historical closing price sequence for AHL, we can predict the cumulative 5-day return to 2024-02-2",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 5.0
+      },
+      {
+        "sample_idx": 7,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AHL over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 8,
+        "ticker": "AON.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AON over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 9,
+        "ticker": "AON.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AON over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 10,
+        "ticker": "AON.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AON over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 11,
+        "ticker": "AON.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for AON over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 12,
+        "ticker": "APN.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "Analyzing the historical closing price sequence for APN.JO (South Africa, Healthcare) over the past 20 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 13,
+        "ticker": "APN.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "Analyzing the historical closing price sequence for APN.JO (South Africa, Healthcare) over the past 20 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 14,
+        "ticker": "APN.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "Analyzing the historical closing price sequence for APN.JO (South Africa, Healthcare) over the past 20 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 15,
+        "ticker": "APN.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "Analyzing the historical closing price sequence for APN.JO (South Africa, Healthcare) over the past 20 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 16,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BANDHANBNK over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 17,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BANDHANBNK over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 18,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BANDHANBNK over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 19,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BANDHANBNK over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 20,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "Analyzing the historical closing price sequence for BAW.JO (South Africa, Industrials) over the past 20 trading days up to 2",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 21,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "Analyzing the historical closing price sequence for BAW.JO (South Africa, Industrials) over the past 20 trading days up to 2",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 22,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BAW.JO (South Africa, Indust",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 23,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "Analyzing the historical closing price sequence for BAW.JO (South Africa, Industrials) over the past 20 trading days up to 2",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 24,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BHARTIARTL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 25,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BHARTIARTL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 26,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BHARTIARTL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 27,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BHARTIARTL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 28,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BLUESTARCO over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 29,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BLUESTARCO over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 30,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BLUESTARCO over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 31,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BLUESTARCO over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 32,
+        "ticker": "BOOT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BOOT (United States, Consumer Discretion",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 33,
+        "ticker": "BOOT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BOOT (United States, Consumer Discretion",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 34,
+        "ticker": "BOOT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BOOT (United States, Consumer Discretion",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 35,
+        "ticker": "BOOT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BOOT (United States, Consumer Discretion",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 36,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BRIGADE over the past 20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 37,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BRIGADE over the past 20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 38,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BRIGADE over the past 20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 39,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for BRIGADE over the past 20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 40,
+        "ticker": "CAT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CAT (United States, Industrials)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 41,
+        "ticker": "CAT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CAT (United States, Industrials)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 42,
+        "ticker": "CAT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CAT (United States, Industrials)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 43,
+        "ticker": "CAT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CAT (United States, Industrials)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 44,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CIPLA.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 45,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CIPLA.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 46,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CIPLA.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 47,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CIPLA.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 48,
+        "ticker": "CUBI",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CUBI (United States, Financials",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 49,
+        "ticker": "CUBI",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CUBI (United States, Financials",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 50,
+        "ticker": "CUBI",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CUBI (United States, Financials",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 51,
+        "ticker": "CUBI",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for CUBI (United States, Financials",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 52,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for EEL (South Africa, Energy) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 53,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for EEL over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 54,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for EEL over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 55,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for EEL over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 56,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for FGL.JO (South Africa, Fin",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 57,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for FGL.JO (South Africa, Fin",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 58,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for FGL.JO (South Africa, Fin",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 59,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for FGL.JO (South Africa, Fin",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 60,
+        "ticker": "FTNT",
+        "origin_date": "2024-01-12",
+        "raw_text": "Analyzing the historical closing price sequence for FTNT (United States, Technology) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 61,
+        "ticker": "FTNT",
+        "origin_date": "2024-02-06",
+        "raw_text": "Analyzing the historical closing price sequence for FTNT (United States, Technology) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 62,
+        "ticker": "FTNT",
+        "origin_date": "2024-02-28",
+        "raw_text": "Analyzing the historical closing price sequence for FTNT (United States, Technology) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 63,
+        "ticker": "FTNT",
+        "origin_date": "2024-03-20",
+        "raw_text": "Analyzing the historical closing price sequence for FTNT (United States, Technology) over the past 20 trading days up to 2024-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 64,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-trading-day ahead log return from 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 65,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GMRP_UI.BSE (",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 66,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-trading-day ahead log return from 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 67,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GMRP_UI.BSE (",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 68,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GODREJCP over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 69,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GODREJCP over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 70,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GODREJCP over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 71,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GODREJCP over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 72,
+        "ticker": "GOOD",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GOOD (United States, Real Estate) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 73,
+        "ticker": "GOOD",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GOOD (United States, Real Estate) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 74,
+        "ticker": "GOOD",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GOOD (United States, Real Estate) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 75,
+        "ticker": "GOOD",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for GOOD (United States, Real Estate) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 76,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return from 2024-01-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 77,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return from 2024-02-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 78,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return from 2024-02-",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 79,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for IMP.JO (South Africa, Materials)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 80,
+        "ticker": "META",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for META over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 81,
+        "ticker": "META",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for META over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 82,
+        "ticker": "META",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for META over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 83,
+        "ticker": "META",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for META over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 84,
+        "ticker": "MST.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for MST.JO (South Africa, Technology",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 85,
+        "ticker": "MST.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for MST.JO (South Africa, Technology",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 86,
+        "ticker": "MST.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for MST.JO (South Africa, Technology",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 87,
+        "ticker": "MST.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for MST.JO (South Africa, Technology",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 88,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for ONGC.BSE (India, Energy",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 89,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for ONGC.BSE (India, Energy",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 90,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for ONGC.BSE (India, Energy",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 91,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for ONGC.BSE (India, Energy",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 92,
+        "ticker": "PG",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PG (United States, Consumer Staples)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 93,
+        "ticker": "PG",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PG (United States, Consumer Staples)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 94,
+        "ticker": "PG",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PG (United States, Consumer Staples)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 95,
+        "ticker": "PG",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PG (United States, Consumer Staples)",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 96,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PPR in South Africa over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 97,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PPR over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 98,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PPR over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 99,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for PPR over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 100,
+        "ticker": "RS",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for RS (United States, Materials) over the",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 101,
+        "ticker": "RS",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for RS (United States, Materials) over the",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 102,
+        "ticker": "RS",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for RS (United States, Materials) over the",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 103,
+        "ticker": "RS",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for RS (United States, Materials) over the",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 104,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TATASTEEL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 105,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TATASTEEL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 106,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TATASTEEL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 107,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TATASTEEL over the past",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 108,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TECHM.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 109,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "Analyzing the historical closing price sequence for TECHM.BSE (India, Technology) over the past 20 trading days up to 20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20.0
+      },
+      {
+        "sample_idx": 110,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TECHM.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 111,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TECHM.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 112,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TLM over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 113,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TLM over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 114,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TLM over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 115,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for TLM over the past 20 trading",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 116,
+        "ticker": "XOM",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for XOM (United States, Energy) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 117,
+        "ticker": "XOM",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for XOM (United States, Energy) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 118,
+        "ticker": "XOM",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for XOM (United States, Energy) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 119,
+        "ticker": "XOM",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative 5-day return for XOM (United States, Energy) over",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      }
+    ],
+    "Template_B": [
+      {
+        "sample_idx": 0,
+        "ticker": "ABT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 111.13]\n\nThe current closing price on 2024-01-22 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 111.13
+      },
+      {
+        "sample_idx": 1,
+        "ticker": "ABT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 111.21]",
+        "is_valid": true,
+        "predicted_return": 1.757088116617677e-05,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 2,
+        "ticker": "ABT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 117.11]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 117.11
+      },
+      {
+        "sample_idx": 3,
+        "ticker": "ABT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 108.77]",
+        "is_valid": true,
+        "predicted_return": 6.694418050310662e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 4,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 0.16]\n\nThe current closing price on 2024-01-19 is 0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.16
+      },
+      {
+        "sample_idx": 5,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 0.16]\n\nThe current closing price on 2024-02-13 is 0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.16
+      },
+      {
+        "sample_idx": 6,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 16.00]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 16.0
+      },
+      {
+        "sample_idx": 7,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 16.00]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 16.0
+      },
+      {
+        "sample_idx": 8,
+        "ticker": "AON.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1800.00]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1800.0
+      },
+      {
+        "sample_idx": 9,
+        "ticker": "AON.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1800.00]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1800.0
+      },
+      {
+        "sample_idx": 10,
+        "ticker": "AON.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1460.00]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1460.0
+      },
+      {
+        "sample_idx": 11,
+        "ticker": "AON.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 1150.00]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1150.0
+      },
+      {
+        "sample_idx": 12,
+        "ticker": "APN.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 20314.25]\n\nThe current closing price on 2024-01-1",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 20314.25
+      },
+      {
+        "sample_idx": 13,
+        "ticker": "APN.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 19658.37]\n\nThe current closing price on 2024-02-1",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 19658.37
+      },
+      {
+        "sample_idx": 14,
+        "ticker": "APN.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 19328.43]\n\nThe current closing price on 2024-03-0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 19328.43
+      },
+      {
+        "sample_idx": 15,
+        "ticker": "APN.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 21449.04]\n\nThe current closing price on 2024-03-2",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 21449.04
+      },
+      {
+        "sample_idx": 16,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 230.10]\n\nThe current closing price on 2024-01-19 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 230.1
+      },
+      {
+        "sample_idx": 17,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 218.45]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 218.45
+      },
+      {
+        "sample_idx": 18,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 196.60]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 196.6
+      },
+      {
+        "sample_idx": 19,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 177.85]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 20,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 7688.19]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 7688.19
+      },
+      {
+        "sample_idx": 21,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 7525.29]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 7525.29
+      },
+      {
+        "sample_idx": 22,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 6617.86]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 6617.86
+      },
+      {
+        "sample_idx": 23,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 6081.19]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 6081.19
+      },
+      {
+        "sample_idx": 24,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1076.10]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1076.1
+      },
+      {
+        "sample_idx": 25,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1134.25]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 26,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1128.70]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1128.7
+      },
+      {
+        "sample_idx": 27,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 1232.00]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1232.0
+      },
+      {
+        "sample_idx": 28,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1022.50]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1022.5
+      },
+      {
+        "sample_idx": 29,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1159.40]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1159.4
+      },
+      {
+        "sample_idx": 30,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1294.40]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1294.4
+      },
+      {
+        "sample_idx": 31,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 1231.05]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1231.05
+      },
+      {
+        "sample_idx": 32,
+        "ticker": "BOOT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 72.38]",
+        "is_valid": true,
+        "predicted_return": 3.7946699062433616e-08,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 33,
+        "ticker": "BOOT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 81.62]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 81.62
+      },
+      {
+        "sample_idx": 34,
+        "ticker": "BOOT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 90.00]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 90.0
+      },
+      {
+        "sample_idx": 35,
+        "ticker": "BOOT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 87.46]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 87.46
+      },
+      {
+        "sample_idx": 36,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 971.70]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 37,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1058.85]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 38,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 995.00]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 995.0
+      },
+      {
+        "sample_idx": 39,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 878.25]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 878.25
+      },
+      {
+        "sample_idx": 40,
+        "ticker": "CAT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 283.42]",
+        "is_valid": true,
+        "predicted_return": 1.0397264353168528e-05,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 41,
+        "ticker": "CAT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 316.41]",
+        "is_valid": true,
+        "predicted_return": 5.871861227601101e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 42,
+        "ticker": "CAT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 323.11]",
+        "is_valid": true,
+        "predicted_return": -1.364974866227248e-05,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 43,
+        "ticker": "CAT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 349.48]",
+        "is_valid": true,
+        "predicted_return": 4.422037236009498e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 44,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1308.35]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 45,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1425.55]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1425.55
+      },
+      {
+        "sample_idx": 46,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1476.25]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1476.25
+      },
+      {
+        "sample_idx": 47,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 1416.80]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1416.8
+      },
+      {
+        "sample_idx": 48,
+        "ticker": "CUBI",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 51.57]\n\nThe current closing price on 2024-01-22 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 51.57
+      },
+      {
+        "sample_idx": 49,
+        "ticker": "CUBI",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 50.42]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 50.42
+      },
+      {
+        "sample_idx": 50,
+        "ticker": "CUBI",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 53.23]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 53.23
+      },
+      {
+        "sample_idx": 51,
+        "ticker": "CUBI",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 53.34]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 53.34
+      },
+      {
+        "sample_idx": 52,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 0.12]\n\nThe current closing price on 2024-01-19 is 0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.12
+      },
+      {
+        "sample_idx": 53,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 0.12]\n\nThe current closing price on 2024-02-13 is 0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.12
+      },
+      {
+        "sample_idx": 54,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 0.12]\n\nThe current closing price on 2024-03-06 is 0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.12
+      },
+      {
+        "sample_idx": 55,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 0.12]\n\nThe current closing price on 2024-03-20 is 0",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.12
+      },
+      {
+        "sample_idx": 56,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 34.96]\n\nThe current closing price on 2024-01-19 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 34.96
+      },
+      {
+        "sample_idx": 57,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 29.96]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 29.96
+      },
+      {
+        "sample_idx": 58,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 29.96]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 29.96
+      },
+      {
+        "sample_idx": 59,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 36.96]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 36.96
+      },
+      {
+        "sample_idx": 60,
+        "ticker": "FTNT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 62.44]\n\nThe current closing price on 2024-01-22 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 62.44
+      },
+      {
+        "sample_idx": 61,
+        "ticker": "FTNT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 67.48]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 67.48
+      },
+      {
+        "sample_idx": 62,
+        "ticker": "FTNT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 69.51]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 69.51
+      },
+      {
+        "sample_idx": 63,
+        "ticker": "FTNT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 67.87]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 67.87
+      },
+      {
+        "sample_idx": 64,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 53.48]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 65,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 56.31]\n\nOutput: [FORECAST: 56.31]\n\nExplanation:",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 56.31
+      },
+      {
+        "sample_idx": 66,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 48.95]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 48.95
+      },
+      {
+        "sample_idx": 67,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 44.76]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 44.76
+      },
+      {
+        "sample_idx": 68,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1155.45]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1155.45
+      },
+      {
+        "sample_idx": 69,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1237.50]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1237.5
+      },
+      {
+        "sample_idx": 70,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1232.25]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 71,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 1215.25]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1215.25
+      },
+      {
+        "sample_idx": 72,
+        "ticker": "GOOD",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 11.91]\n\nThe current closing price on 2024-01-22 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 11.91
+      },
+      {
+        "sample_idx": 73,
+        "ticker": "GOOD",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 11.14]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 11.14
+      },
+      {
+        "sample_idx": 74,
+        "ticker": "GOOD",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 10.90]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 10.9
+      },
+      {
+        "sample_idx": 75,
+        "ticker": "GOOD",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 12.21]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 12.21
+      },
+      {
+        "sample_idx": 76,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 7729.00]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 7729.0
+      },
+      {
+        "sample_idx": 77,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 6915.00]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 6915.0
+      },
+      {
+        "sample_idx": 78,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 6481.00]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 6481.0
+      },
+      {
+        "sample_idx": 79,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 7345.00]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 7345.0
+      },
+      {
+        "sample_idx": 80,
+        "ticker": "META",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 372.45]",
+        "is_valid": true,
+        "predicted_return": 8.73456312430258e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 81,
+        "ticker": "META",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 452.24]",
+        "is_valid": true,
+        "predicted_return": 2.248467287864374e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 82,
+        "ticker": "META",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 481.89]",
+        "is_valid": true,
+        "predicted_return": 3.4957575519252285e-07,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 83,
+        "ticker": "META",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 503.30]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 503.3
+      },
+      {
+        "sample_idx": 84,
+        "ticker": "MST.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1309.93]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1309.93
+      },
+      {
+        "sample_idx": 85,
+        "ticker": "MST.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1313.93]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1313.93
+      },
+      {
+        "sample_idx": 86,
+        "ticker": "MST.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1076.94]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1076.94
+      },
+      {
+        "sample_idx": 87,
+        "ticker": "MST.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 996.95]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 996.95
+      },
+      {
+        "sample_idx": 88,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 223.35]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 89,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 272.25]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 90,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 265.35]",
+        "is_valid": true,
+        "predicted_return": 0.0,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 91,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 263.85]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 263.85
+      },
+      {
+        "sample_idx": 92,
+        "ticker": "PG",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 145.15]",
+        "is_valid": true,
+        "predicted_return": 2.4115800331824053e-05,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 93,
+        "ticker": "PG",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 154.17]",
+        "is_valid": true,
+        "predicted_return": -8.598805825574526e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 94,
+        "ticker": "PG",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 155.23]",
+        "is_valid": true,
+        "predicted_return": 9.66076810457017e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 95,
+        "ticker": "PG",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 157.11]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 157.11
+      },
+      {
+        "sample_idx": 96,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 324.79]\n\nThe current closing price on 2024-01-19 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 324.79
+      },
+      {
+        "sample_idx": 97,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 321.80]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 321.8
+      },
+      {
+        "sample_idx": 98,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 315.80]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 315.8
+      },
+      {
+        "sample_idx": 99,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 299.81]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 299.81
+      },
+      {
+        "sample_idx": 100,
+        "ticker": "RS",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 275.63]",
+        "is_valid": true,
+        "predicted_return": 2.5288334568010137e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 101,
+        "ticker": "RS",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 284.84]",
+        "is_valid": true,
+        "predicted_return": 9.0126044099794e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 102,
+        "ticker": "RS",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 314.23]",
+        "is_valid": true,
+        "predicted_return": -4.016817287308637e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 103,
+        "ticker": "RS",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 320.67]",
+        "is_valid": true,
+        "predicted_return": -8.606972551072608e-06,
+        "fallback_extracted": false,
+        "fallback_value": null
+      },
+      {
+        "sample_idx": 104,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 135.30]\n\nThe current closing price on 2024-01-19 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 135.3
+      },
+      {
+        "sample_idx": 105,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 144.70]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 144.7
+      },
+      {
+        "sample_idx": 106,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 140.75]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 140.75
+      },
+      {
+        "sample_idx": 107,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 145.70]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 145.7
+      },
+      {
+        "sample_idx": 108,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 1307.55]\n\nThe current closing price on 2024-01-19",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1307.55
+      },
+      {
+        "sample_idx": 109,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 1350.35]\n\nThe current closing price on 2024-02-13",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1350.35
+      },
+      {
+        "sample_idx": 110,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 1284.00]\n\nThe current closing price on 2024-03-06",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1284.0
+      },
+      {
+        "sample_idx": 111,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 1263.45]\n\nThe current closing price on 2024-03-20",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 1263.45
+      },
+      {
+        "sample_idx": 112,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 79.92]\n\nThe current closing price on 2024-01-19 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 79.92
+      },
+      {
+        "sample_idx": 113,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 87.91]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 87.91
+      },
+      {
+        "sample_idx": 114,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 83.91]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 83.91
+      },
+      {
+        "sample_idx": 115,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 74.92]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 74.92
+      },
+      {
+        "sample_idx": 116,
+        "ticker": "XOM",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: 94.92]\n\nThe current closing price on 2024-01-22 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 94.92
+      },
+      {
+        "sample_idx": 117,
+        "ticker": "XOM",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: 97.11]\n\nThe current closing price on 2024-02-13 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 97.11
+      },
+      {
+        "sample_idx": 118,
+        "ticker": "XOM",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: 99.99]\n\nThe current closing price on 2024-03-06 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 99.99
+      },
+      {
+        "sample_idx": 119,
+        "ticker": "XOM",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: 108.30]\n\nThe current closing price on 2024-03-20 is",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 108.3
+      }
+    ],
+    "Template_C": [
+      {
+        "sample_idx": 0,
+        "ticker": "ABT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 1,
+        "ticker": "ABT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 2,
+        "ticker": "ABT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 3,
+        "ticker": "ABT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 4,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 5,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 6,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 7,
+        "ticker": "AHL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 8,
+        "ticker": "AON.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 9,
+        "ticker": "AON.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 10,
+        "ticker": "AON.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 11,
+        "ticker": "AON.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 12,
+        "ticker": "APN.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 13,
+        "ticker": "APN.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 14,
+        "ticker": "APN.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 15,
+        "ticker": "APN.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 16,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return for BANDHANBNK.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 17,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return for BANDHANBNK.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 18,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nOutput:\n\n[FORECAST: +0.0125]",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 19,
+        "ticker": "BANDHANBNK.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return for BANDHANBNK.BSE (India,",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 20,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 21,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 22,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 23,
+        "ticker": "BAW.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 24,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 25,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 26,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 27,
+        "ticker": "BHARTIARTL.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 28,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 29,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 30,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return for BLUESTARCO.BSE (India, Consumer",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 31,
+        "ticker": "BLUESTARCO.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 32,
+        "ticker": "BOOT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 33,
+        "ticker": "BOOT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 34,
+        "ticker": "BOOT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 35,
+        "ticker": "BOOT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 36,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 37,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 38,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 39,
+        "ticker": "BRIGADE.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 40,
+        "ticker": "CAT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 41,
+        "ticker": "CAT",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 42,
+        "ticker": "CAT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 43,
+        "ticker": "CAT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 44,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 45,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 46,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 47,
+        "ticker": "CIPLA.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 48,
+        "ticker": "CUBI",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 49,
+        "ticker": "CUBI",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 50,
+        "ticker": "CUBI",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 51,
+        "ticker": "CUBI",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 52,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 53,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 54,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 55,
+        "ticker": "EEL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 56,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 57,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 58,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 59,
+        "ticker": "FGL.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 60,
+        "ticker": "FTNT",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 61,
+        "ticker": "FTNT",
+        "origin_date": "2024-02-06",
+        "raw_text": "Task: Predict the cumulative percentage return over the next 5 trading days up to 2024-02-13.\nFormat your output",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 5.0
+      },
+      {
+        "sample_idx": 62,
+        "ticker": "FTNT",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 63,
+        "ticker": "FTNT",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 64,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 65,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 66,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 67,
+        "ticker": "GMRP_UI.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 68,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 69,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 70,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 71,
+        "ticker": "GODREJCP.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 72,
+        "ticker": "GOOD",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 73,
+        "ticker": "GOOD",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 74,
+        "ticker": "GOOD",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 75,
+        "ticker": "GOOD",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 76,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 77,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 78,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 79,
+        "ticker": "IMP.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 80,
+        "ticker": "META",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 81,
+        "ticker": "META",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 82,
+        "ticker": "META",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 83,
+        "ticker": "META",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 84,
+        "ticker": "MST.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 85,
+        "ticker": "MST.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 86,
+        "ticker": "MST.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 87,
+        "ticker": "MST.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 88,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return for ONGC.BSE (India, Energy) over the",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 89,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 90,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 91,
+        "ticker": "ONGC.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 92,
+        "ticker": "PG",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 93,
+        "ticker": "PG",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 94,
+        "ticker": "PG",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 95,
+        "ticker": "PG",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 96,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 97,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 98,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 99,
+        "ticker": "PPR.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 100,
+        "ticker": "RS",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 101,
+        "ticker": "RS",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 102,
+        "ticker": "RS",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 103,
+        "ticker": "RS",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 104,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 105,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 106,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 107,
+        "ticker": "TATASTEEL.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 108,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 109,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 110,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 111,
+        "ticker": "TECHM.BSE",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 112,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 113,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 114,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 115,
+        "ticker": "TLM.JO",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 116,
+        "ticker": "XOM",
+        "origin_date": "2024-01-12",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 117,
+        "ticker": "XOM",
+        "origin_date": "2024-02-06",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 118,
+        "ticker": "XOM",
+        "origin_date": "2024-02-28",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      },
+      {
+        "sample_idx": 119,
+        "ticker": "XOM",
+        "origin_date": "2024-03-20",
+        "raw_text": "[FORECAST: +0.0125]\n\nThe cumulative percentage return over the next 5 trading days up to 202",
+        "is_valid": false,
+        "predicted_return": null,
+        "fallback_extracted": true,
+        "fallback_value": 0.0125
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "model_name": "Qwen 2.5 0.5B Instruct",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "license": "apache-2.0",
+  "parameter_count": 494032768,
+  "status": "COMPLETED",
+  "samples_attempted": 20781,
+  "samples_completed": 20781,
+  "strict_valid_count": 20781,
+  "strict_valid_pct": 100.0,
+  "invalid_count": 0,
+  "invalid_pct": 0.0,
+  "fallback_extracted_count": 0,
+  "fallback_extracted_pct": 0.0,
+  "economic_bound_violations": 0,
+  "validation_eligibility_95pct_pass": true,
+  "forecasting_winner_declared": false,
+  "timing": {
+    "load_time_sec": 0.79,
+    "total_inference_time_sec": 11516.91,
+    "generation_only_time_sec": 11493.84,
+    "total_generated_tokens": 270050,
+    "mean_tokens_per_sec": 23.5
+  },
+  "persistence_baseline": {
+    "rmse": 0.093042,
+    "mae": 0.037751
+  },
+  "persistence_replaced": {
+    "rmse": 0.093326,
+    "mae": 0.038301,
+    "rel_rmse_vs_persistence": 1.003054
+  },
+  "common_valid_subset": {
+    "valid_samples": 20781,
+    "rmse": 0.093326,
+    "mae": 0.038301,
+    "persistence_rmse": 0.093042,
+    "persistence_mae": 0.037751,
+    "rel_rmse_vs_persistence": 1.003054,
+    "directional_accuracy_pct": 46.33,
+    "directional_accuracy_correct": 9142,
+    "directional_accuracy_eligible": 19733
+  }
+}

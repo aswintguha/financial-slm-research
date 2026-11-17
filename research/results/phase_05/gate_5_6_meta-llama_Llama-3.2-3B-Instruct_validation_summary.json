@@ -1,0 +1,46 @@
+{
+  "model_name": "Llama 3.2 3B Instruct",
+  "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+  "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+  "license": "llama3.2",
+  "parameter_count": 3212749824,
+  "status": "COMPLETED",
+  "samples_attempted": 20781,
+  "samples_completed": 20781,
+  "strict_valid_count": 20670,
+  "strict_valid_pct": 99.4659,
+  "invalid_count": 111,
+  "invalid_pct": 0.5341,
+  "fallback_extracted_count": 111,
+  "fallback_extracted_pct": 0.5341,
+  "economic_bound_violations": 0,
+  "validation_eligibility_95pct_pass": true,
+  "forecasting_winner_declared": false,
+  "timing": {
+    "load_time_sec": 5.48,
+    "total_inference_time_sec": 25019.83,
+    "generation_only_time_sec": 24988.13,
+    "total_generated_tokens": 230896,
+    "mean_tokens_per_sec": 9.24
+  },
+  "persistence_baseline": {
+    "rmse": 0.093042,
+    "mae": 0.037751
+  },
+  "persistence_replaced": {
+    "rmse": 0.093567,
+    "mae": 0.039299,
+    "rel_rmse_vs_persistence": 1.005648
+  },
+  "common_valid_subset": {
+    "valid_samples": 20670,
+    "rmse": 0.093744,
+    "mae": 0.039301,
+    "persistence_rmse": 0.093217,
+    "persistence_mae": 0.037745,
+    "rel_rmse_vs_persistence": 1.005657,
+    "directional_accuracy_pct": 53.08,
+    "directional_accuracy_correct": 10415,
+    "directional_accuracy_eligible": 19622
+  }
+}

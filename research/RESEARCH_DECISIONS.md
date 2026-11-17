@@ -202,3 +202,34 @@ Each decision entry must document:
   - *Option C (Recompute MASE denominator on test set):* *Rejected:* Severe methodological flaw violating Hyndman's out-of-sample MASE definition.
 - **Timing:** *A Priori*.
 - **Impacted Files / Components:** `src/evaluation/evaluator.py`, `src/benchmark/run_baselines.py`, `research/results/phase_04/`.
+
+---
+
+### DEC-P05-001: Phase 05 Zero-Shot SLM Benchmark Protocol, Validity Policies, and Selection Hierarchy
+- **Date:** 2026-11-13
+- **Phase:** Phase 05 (Zero-Shot SLM Benchmark and Selection)
+- **Decision:** Formally lock the experimental protocol, taxonomy, validity gates, and selection rules for Phase 05:
+  1. **Model Scope:** Exactly 10 instruction-tuned SLMs ($\le 4\text{B}$ parameters) across 5 distinct model families: Llama 3.2 (1B, 3B), Qwen 2.5 (0.5B, 1.5B, 3B), Gemma 2 (2B), SmolLM2 (135M, 360M, 1.7B), and Phi-3.5 (3.8B). Zero traditional ML, classical time-series, deep time-series, or foundation time-series models permitted.
+  2. **Primary Benchmark Prompt & Representation:** Template A (cumulative 5-day log-return prediction from historical prices) is frozen *a priori* as the universal benchmark prompt. Prompt-and-input-representation sensitivity analysis is strictly quarantined to an independent development split and evaluated against the unified log-return target $r_{t \to t+5} = \log(P_{t+5} / P_t)$.
+  3. **Screening Cohort (420 Samples) & Cross-Market Target Construction:**
+     - Screening origins are temporally synchronized using common market trading sessions across India, South Africa, and USA ($k \in \{0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117\}$; $\Delta k = 9$).
+     - Ticker targets are constructed strictly along each ticker's own home-exchange trading session sequence (5th subsequent trading session on that exchange). Target calendar dates may vary across markets due to local holiday closures, but reflect exact 5-trading-day returns.
+     - The cohort spans 30 stocks (1 per sector across all 10 canonical sectors per country) $\times$ 14 origin dates = 420 samples. The exact manifest `configs/screening_cohort_manifest.json` will be generated from this common-session logic prior to running Gate 5.4.
+  4. **Validity Parsing & Two-Tier Thresholds:**
+     - Strict validity requires exact compliance with `[FORECAST: <number>]` matched as a case-sensitive full string (`^\s*\[FORECAST:\s*([+-]?\d+(?:\.\d+)?)\s*\]\s*$`). Fallback parsing is tracked diagnostically but scored as invalid under primary benchmark metrics.
+     - Native chat-template protocol: Every model must be invoked using its native `tokenizer.apply_chat_template` wrapping the frozen Template A semantic prompt text inside a `[{"role": "user", "content": ...}]` structure with `add_generation_prompt=True`. The benchmark runner requires `tokenizer.chat_template` to be present and halts with an explicit `NativeChatTemplateError` if missing, completely preventing silent raw-prompt degradation or ad-hoc custom string wrappers. The underlying Template A prompt text remains 100% frozen and byte-for-byte identical across all models.
+     - Tier 1 (Screening Threshold, Gate 5.4): $\ge 90.0\%$ strict validity required on 420 samples.
+     - Tier 2 (Backbone Eligibility Threshold, Gate 5.6): $\ge 95.0\%$ strict validity required on full validation data.
+  5. **No-Winner, SFT Research Candidate, and Tie-Breaking Contingencies:**
+     - *Forecasting Winner Definition:* A candidate is declared a true forecasting winner only if it achieves `valid_output_pct >= 95.0%` AND `RelRMSE_replaced < 1.0000` on Validation $H=5$ (outperforming the trivial Random Walk persistence benchmark).
+     - *SFT Research Candidate Selection (When None Beats Persistence):* If eligible models exist (`valid_output_pct >= 95.0%`) but none beats Persistence (`RelRMSE_replaced >= 1.0000`), the top model is NOT designated a forecasting winner. Instead, it is designated strictly as an **SFT research candidate** for Phase 06 fine-tuning, accompanied by the explicit published finding that no zero-shot SLM outperformed the random walk baseline.
+     - *No Eligible Backbone Outcome:* If no model satisfies $\ge 95.0\%$ strict validity on validation, the benchmark halts with an explicit *No Eligible Backbone Found* declaration. No model is selected automatically.
+     - *Reproducible Throughput Measurement for Tie-Breaking:* If two contenders fall within a 1.0% relative error margin, ties are broken deterministically by (a) Directional Accuracy, (b) Strict Validity %, (c) Parameter Count (lower is better), and (d) Measured Generation Throughput. Throughput is strictly the final tie-breaker and cannot override error rankings outside the 1.0% margin. It must be evaluated under a standardized protocol: sequential execution on identical hardware, batch size = 1, greedy decoding (`temperature=0.0`, `max_new_tokens=32`), 5 discarded warm-up passes, exact same 50-sample slice and order (the first 50 samples of the 420 screening cohort sorted lexicographically by `(ticker, origin_date)`), MPS synchronization before and after timing, prompt prefill explicitly excluded from generation tokens/sec, and averaged over 3 repeated runs.
+  6. **Horizon Hierarchy & Test Isolation:** Primary Horizon $H=5$ is the sole criterion for backbone selection. Secondary Horizon $H=1$ is evaluated for top contenders and reported separately without influencing selection. The locked test split (`2024-11-11` to `2025-05-30`) is evaluated once on the final selected winning backbone only.
+  7. **Table Reporting Standard:** All benchmark tables must report Strict Validity %, Invalid Output %, Common-Valid-Subset metrics (MAE, RMSE, NRMSE, RelRMSE, MASE, DA, Bias), and Persistence-Replaced metrics.
+- **Rationale:** Guarantees complete scientific rigor, zero test-set leakage, transparent handling of model hallucinations, and deterministic reproducibility.
+- **Alternatives Considered & Rejected:**
+  - *Option B (Select model based on whichever horizon performs best):* *Rejected:* Introduces post-hoc cherry-picking.
+  - *Option C (Count conversational numeric extraction as valid):* *Rejected:* Masks structural instruction-following failures.
+- **Timing:** *A Priori* (locked prior to model benchmarking).
+- **Impacted Files / Components:** `research/MASTER_RESEARCH_PLAN.md`, `configs/benchmark_zero_shot.yaml`, `src/benchmark/`, `research/results/phase_05/`.

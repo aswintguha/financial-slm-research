@@ -1,0 +1,78 @@
+# Master Benchmark Configuration for Phase 05: Zero-Shot SLM Financial Time-Series Forecasting
+
+experiment:
+  phase: "Phase 05"
+  name: "zero_shot_slm_benchmark"
+  protocol_version: "Phased Research Protocol v1.0"
+  random_seed: 42
+
+horizons:
+  primary: 5
+  secondary: 1
+
+context_window: 20
+
+universes:
+  core_full_history_count: 146
+  secondary_count: 4
+  screening_sample_count: 420
+  screening_tickers_count: 30
+
+splits:
+  validation:
+    start_date: "2024-04-09"
+    end_date: "2024-10-31"
+  test:
+    start_date: "2024-11-11"
+    end_date: "2025-05-30"
+
+generation:
+  temperature: 0.0
+  do_sample: false
+  max_new_tokens: 32
+  precision: "bfloat16"
+  device: "mps"
+
+validity_thresholds:
+  screening_gate_5_4: 90.0
+  backbone_eligibility_gate_5_6: 95.0
+
+tie_breaker_protocol:
+  throughput_sample_count: 50
+  selection_rule: "First 50 samples of screening cohort sorted lexicographically by (ticker, origin_date)"
+  warm_up_runs: 5
+  measurement_repetitions: 3
+  timing_mode: "generation_only"
+
+candidate_models:
+  - family: "Llama 3.2"
+    id: "meta-llama/Llama-3.2-1B-Instruct"
+    params: "1.23B"
+  - family: "Llama 3.2"
+    id: "meta-llama/Llama-3.2-3B-Instruct"
+    params: "3.21B"
+  - family: "Qwen 2.5"
+    id: "Qwen/Qwen2.5-0.5B-Instruct"
+    params: "0.49B"
+  - family: "Qwen 2.5"
+    id: "Qwen/Qwen2.5-1.5B-Instruct"
+    params: "1.54B"
+  - family: "Qwen 2.5"
+    id: "Qwen/Qwen2.5-3B-Instruct"
+    params: "3.09B"
+  - family: "Gemma 2"
+    id: "google/gemma-2-2b-it"
+    params: "2.61B"
+  - family: "SmolLM2"
+    id: "HuggingFaceTB/SmolLM2-135M-Instruct"
+    params: "0.135B"
+  - family: "SmolLM2"
+    id: "HuggingFaceTB/SmolLM2-360M-Instruct"
+    params: "0.36B"
+  - family: "SmolLM2"
+    id: "HuggingFaceTB/SmolLM2-1.7B-Instruct"
+    params: "1.71B"
+  - family: "Phi-3.5"
+    id: "microsoft/Phi-3.5-mini-instruct"
+    params: "3.82B"
+

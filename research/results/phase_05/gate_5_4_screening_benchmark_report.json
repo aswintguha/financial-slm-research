@@ -1,0 +1,442 @@
+{
+  "benchmark": "Phase 05 Gate 5.4 Zero-Shot SLM Screening (420 Samples)",
+  "timestamp_utc": "2026-11-15T12:27:45Z",
+  "manifest_sha256": "7cafe701d2fd689d660da104e465e515ec271d12e94f22605e458de8eaadee9e",
+  "cohort_samples": 420,
+  "screening_threshold_pct": 90.0,
+  "device": "mps",
+  "precision": "bfloat16",
+  "models_count": 10,
+  "models_summary": [
+    {
+      "model_name": "SmolLM2 135M Instruct",
+      "model_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "license": "apache-2.0",
+      "parameter_count": 134515008,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 0,
+      "strict_valid_pct": 0.0,
+      "invalid_count": 420,
+      "invalid_pct": 100.0,
+      "fallback_extracted_count": 420,
+      "fallback_extracted_pct": 100.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": false,
+      "timing": {
+        "load_time_sec": 0.64,
+        "total_inference_time_sec": 362.5,
+        "generation_only_time_sec": 362.12,
+        "total_generated_tokens": 13440,
+        "mean_tokens_per_sec": 37.12
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232462,
+        "mae": 0.04576,
+        "rel_rmse_vs_persistence": 1.0
+      },
+      "common_valid_subset": {
+        "valid_samples": 0,
+        "rmse": null,
+        "mae": null,
+        "persistence_rmse": null,
+        "persistence_mae": null,
+        "rel_rmse_vs_persistence": null,
+        "directional_accuracy_pct": null
+      }
+    },
+    {
+      "model_name": "SmolLM2 360M Instruct",
+      "model_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+      "license": "apache-2.0",
+      "parameter_count": 361821120,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 5,
+      "strict_valid_pct": 1.19,
+      "invalid_count": 415,
+      "invalid_pct": 98.81,
+      "fallback_extracted_count": 415,
+      "fallback_extracted_pct": 98.81,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": false,
+      "timing": {
+        "load_time_sec": 170.85,
+        "total_inference_time_sec": 153.19,
+        "generation_only_time_sec": 152.85,
+        "total_generated_tokens": 5050,
+        "mean_tokens_per_sec": 33.04
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232466,
+        "mae": 0.045909,
+        "rel_rmse_vs_persistence": 1.000017
+      },
+      "common_valid_subset": {
+        "valid_samples": 5,
+        "rmse": 0.0125,
+        "mae": 0.0125,
+        "persistence_rmse": 0.0,
+        "persistence_mae": 0.0,
+        "rel_rmse_vs_persistence": 1.0,
+        "directional_accuracy_pct": null
+      }
+    },
+    {
+      "model_name": "Qwen 2.5 0.5B Instruct",
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "license": "apache-2.0",
+      "parameter_count": 494032768,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 420,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": true,
+      "timing": {
+        "load_time_sec": 120.1,
+        "total_inference_time_sec": 149.38,
+        "generation_only_time_sec": 149.04,
+        "total_generated_tokens": 5458,
+        "mean_tokens_per_sec": 36.62
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232562,
+        "mae": 0.04695,
+        "rel_rmse_vs_persistence": 1.000428
+      },
+      "common_valid_subset": {
+        "valid_samples": 420,
+        "rmse": 0.232562,
+        "mae": 0.04695,
+        "persistence_rmse": 0.232462,
+        "persistence_mae": 0.04576,
+        "rel_rmse_vs_persistence": 1.000428,
+        "directional_accuracy_pct": 47.67
+      }
+    },
+    {
+      "model_name": "Llama 3.2 1B Instruct",
+      "model_id": "meta-llama/Llama-3.2-1B-Instruct",
+      "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "license": "llama3.2",
+      "parameter_count": 1235814400,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 0,
+      "strict_valid_pct": 0.0,
+      "invalid_count": 420,
+      "invalid_pct": 100.0,
+      "fallback_extracted_count": 420,
+      "fallback_extracted_pct": 100.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": false,
+      "timing": {
+        "load_time_sec": 428.51,
+        "total_inference_time_sec": 114.54,
+        "generation_only_time_sec": 114.18,
+        "total_generated_tokens": 3119,
+        "mean_tokens_per_sec": 27.32
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232462,
+        "mae": 0.04576,
+        "rel_rmse_vs_persistence": 1.0
+      },
+      "common_valid_subset": {
+        "valid_samples": 0,
+        "rmse": null,
+        "mae": null,
+        "persistence_rmse": null,
+        "persistence_mae": null,
+        "rel_rmse_vs_persistence": null,
+        "directional_accuracy_pct": null
+      }
+    },
+    {
+      "model_name": "Qwen 2.5 1.5B Instruct",
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "license": "apache-2.0",
+      "parameter_count": 1543714304,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 420,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": true,
+      "timing": {
+        "load_time_sec": 525.06,
+        "total_inference_time_sec": 279.83,
+        "generation_only_time_sec": 279.41,
+        "total_generated_tokens": 5375,
+        "mean_tokens_per_sec": 19.24
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232773,
+        "mae": 0.048655,
+        "rel_rmse_vs_persistence": 1.001338
+      },
+      "common_valid_subset": {
+        "valid_samples": 420,
+        "rmse": 0.232773,
+        "mae": 0.048655,
+        "persistence_rmse": 0.232462,
+        "persistence_mae": 0.04576,
+        "rel_rmse_vs_persistence": 1.001338,
+        "directional_accuracy_pct": 47.67
+      }
+    },
+    {
+      "model_name": "SmolLM2 1.7B Instruct",
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "license": "apache-2.0",
+      "parameter_count": 1711376384,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 420,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": true,
+      "timing": {
+        "load_time_sec": 644.3,
+        "total_inference_time_sec": 321.95,
+        "generation_only_time_sec": 321.46,
+        "total_generated_tokens": 5880,
+        "mean_tokens_per_sec": 18.29
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232014,
+        "mae": 0.046415,
+        "rel_rmse_vs_persistence": 0.998071
+      },
+      "common_valid_subset": {
+        "valid_samples": 420,
+        "rmse": 0.232014,
+        "mae": 0.046415,
+        "persistence_rmse": 0.232462,
+        "persistence_mae": 0.04576,
+        "rel_rmse_vs_persistence": 0.998071,
+        "directional_accuracy_pct": 52.88
+      }
+    },
+    {
+      "model_name": "Gemma 2 2B IT",
+      "model_id": "google/gemma-2-2b-it",
+      "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "license": "gemma",
+      "parameter_count": 2614341888,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 420,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": true,
+      "timing": {
+        "load_time_sec": 846.38,
+        "total_inference_time_sec": 1284.31,
+        "generation_only_time_sec": 1283.53,
+        "total_generated_tokens": 6147,
+        "mean_tokens_per_sec": 4.79
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232748,
+        "mae": 0.047122,
+        "rel_rmse_vs_persistence": 1.001231
+      },
+      "common_valid_subset": {
+        "valid_samples": 420,
+        "rmse": 0.232748,
+        "mae": 0.047122,
+        "persistence_rmse": 0.232462,
+        "persistence_mae": 0.04576,
+        "rel_rmse_vs_persistence": 1.001231,
+        "directional_accuracy_pct": 52.05
+      }
+    },
+    {
+      "model_name": "Llama 3.2 3B Instruct",
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "license": "llama3.2",
+      "parameter_count": 3212749824,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 419,
+      "strict_valid_pct": 99.76,
+      "invalid_count": 1,
+      "invalid_pct": 0.24,
+      "fallback_extracted_count": 1,
+      "fallback_extracted_pct": 0.24,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": true,
+      "timing": {
+        "load_time_sec": 540.89,
+        "total_inference_time_sec": 373.66,
+        "generation_only_time_sec": 373.25,
+        "total_generated_tokens": 4641,
+        "mean_tokens_per_sec": 12.43
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232902,
+        "mae": 0.047964,
+        "rel_rmse_vs_persistence": 1.001894
+      },
+      "common_valid_subset": {
+        "valid_samples": 419,
+        "rmse": 0.233179,
+        "mae": 0.048044,
+        "persistence_rmse": 0.232738,
+        "persistence_mae": 0.045835,
+        "rel_rmse_vs_persistence": 1.001894,
+        "directional_accuracy_pct": 50.82
+      }
+    },
+    {
+      "model_name": "Qwen 2.5 3B Instruct",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "license": "other",
+      "parameter_count": 3085938688,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 420,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": true,
+      "timing": {
+        "load_time_sec": 562.63,
+        "total_inference_time_sec": 545.96,
+        "generation_only_time_sec": 545.41,
+        "total_generated_tokens": 5336,
+        "mean_tokens_per_sec": 9.78
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.23332,
+        "mae": 0.050808,
+        "rel_rmse_vs_persistence": 1.00369
+      },
+      "common_valid_subset": {
+        "valid_samples": 420,
+        "rmse": 0.23332,
+        "mae": 0.050808,
+        "persistence_rmse": 0.232462,
+        "persistence_mae": 0.04576,
+        "rel_rmse_vs_persistence": 1.00369,
+        "directional_accuracy_pct": 47.12
+      }
+    },
+    {
+      "model_name": "Phi-3.5 mini Instruct",
+      "model_id": "microsoft/Phi-3.5-mini-instruct",
+      "revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+      "license": "mit",
+      "parameter_count": 3821079552,
+      "status": "COMPLETED",
+      "samples_attempted": 420,
+      "samples_completed": 420,
+      "strict_valid_count": 69,
+      "strict_valid_pct": 16.43,
+      "invalid_count": 351,
+      "invalid_pct": 83.57,
+      "fallback_extracted_count": 351,
+      "fallback_extracted_pct": 83.57,
+      "economic_bound_violations": 0,
+      "screening_threshold_90pct_pass": false,
+      "timing": {
+        "load_time_sec": 1031.6,
+        "total_inference_time_sec": 2158.62,
+        "generation_only_time_sec": 2157.94,
+        "total_generated_tokens": 12268,
+        "mean_tokens_per_sec": 5.69
+      },
+      "persistence_baseline": {
+        "rmse": 0.232462,
+        "mae": 0.04576
+      },
+      "persistence_replaced": {
+        "rmse": 0.232465,
+        "mae": 0.045952,
+        "rel_rmse_vs_persistence": 1.000013
+      },
+      "common_valid_subset": {
+        "valid_samples": 69,
+        "rmse": 0.054034,
+        "mae": 0.038558,
+        "persistence_rmse": 0.053957,
+        "persistence_mae": 0.037388,
+        "rel_rmse_vs_persistence": 1.00142,
+        "directional_accuracy_pct": 50.0
+      }
+    }
+  ]
+}

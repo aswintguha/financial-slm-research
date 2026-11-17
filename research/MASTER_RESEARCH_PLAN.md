@@ -206,34 +206,55 @@ Persistence results are reproduced exactly on re-run, and the evaluator tests pa
 
 ## Phase 5 — Zero-Shot SLM Benchmark and Backbone Selection
 
-**Goal:** answer RQ1 and select one backbone. Experiments E02, E06 (E05 removed).
+**Goal:** answer RQ1, test H6, and select one backbone. Experiments E02 (prompt & representation sensitivity), E06 (zero-shot SLM benchmark). (E05 removed from scope).
 
-### [ORIGINAL]
-- About 10 SLMs under identical conditions: same stocks, dates, context, horizon, prompt, examples, decoding, output format, evaluation script
-- Raw-price and normalized-price representations compared
-- ~~Time-series foundation models as comparison points~~ (removed by your scope decision)
-- Selection on **validation only**, then frozen. The test set is untouched.
+### [ORIGINAL & FROZEN PROTOCOL]
+- Exactly 10 open-weight instruction-tuned SLMs ($\le 4\text{B}$ parameters) across 5 model families (Llama 3.2, Qwen 2.5, Gemma 2, SmolLM2, Phi-3.5) evaluated under identical conditions.
+- Strict scope: Zero traditional ML, zero classical time series (ARIMA), zero deep time series (LSTM/PatchTST), zero time-series foundation models (Chronos/TimesFM).
+- Backbone selection performed on **validation split only**, then frozen. The locked test split is evaluated exactly once on the single selected winning backbone.
+- Target formulation: Primary Horizon $H=5$ trading days cumulative log return is the sole backbone selection criterion. Secondary Horizon $H=1$ is evaluated for top contenders and reported separately without influencing selection.
+- **Cross-Market Target Construction Policy:**
+  - Screening forecast origins are temporally synchronized using common trading-session dates across all three markets.
+  - For each individual stock, the $H=5$ target is constructed strictly along that stock's own exchange trading-session sequence: the 5th subsequent valid trading session on that exchange.
+  - As a result of exchange-specific holiday calendars, target calendar dates may differ across markets for the same origin date (e.g. Ram Navami or Workers' Day). The protocol strictly records each ticker's actual origin date, target date, origin price, target price, and realized cumulative log return, and never artificially forces different international markets to share identical target calendar dates.
+  - This identical ticker-specific target construction logic is applied uniformly across screening, full validation, and test evaluation.
 
-### [CLARIFY] Model list
-Freeze the 10-model list only after a literature and model-availability audit, using the Phase 0 inclusion criteria. Record exact checkpoint names and revisions (commit hashes).
+### [VALIDITY CRITERIA & OUTPUT PARSING RULES]
+- **Strict Compliance:** Exact `[FORECAST: <number>]` tag match is the primary validity criterion (`strict_valid`). Conversational / leading floats are recorded as diagnostic fallback parsing but treated as `is_valid = False` under primary benchmark scoring.
+- **Two-Tier Validity Thresholds:**
+  - Initial Screening Threshold (Gate 5.4, 420-sample cohort): $\ge 90.0\%$ strict validity required to qualify for championship validation.
+  - Final Backbone Eligibility Threshold (Gate 5.6, full 20,781-sample validation split): $\ge 95.0\%$ strict validity required to be eligible as winning backbone.
+- **Dual Metric Reporting:** Both *Common-Valid-Subset* metrics and *Persistence-Replaced* metrics are published in all benchmark tables. Persistence-replaced Relative RMSE vs. Persistence is the primary ranking metric.
 
-### [PROPOSED CHANGE] Prompt robustness check
-- *What:* evaluate 2–3 prompt wordings on the validation set for each model, and pick the prompt by a rule fixed in advance.
-- *Why:* a single prompt can unfairly favor one model family.
-- *Benefit:* the model ranking is less likely to reflect prompt luck.
-- *Validity:* improves fairness. Keep it small to avoid a huge search.
+### [NO-WINNER, SFT CANDIDATE SELECTION & TIE-BREAKING RULES]
+- **Distinction Between Forecasting Winner vs. SFT Research Candidate:**
+  - *Forecasting Winner:* A model must achieve `valid_output_pct >= 95.0%` AND `RelRMSE_replaced < 1.0000` on Validation $H=5$ (outperforming the trivial Random Walk Persistence benchmark).
+  - *SFT Research Candidate (Underpersistence Outcome):* If eligible models exist (`valid_output_pct >= 95.0%`) but *none* beats Persistence (`RelRMSE_replaced >= 1.0000`), the top model is NOT designated a forecasting winner. Instead, it is classified strictly as an **SFT research candidate**, with the explicit scientific finding reported that no zero-shot SLM beat the random walk baseline.
+  - *No Eligible Backbone Found:* If no candidate achieves $\ge 95.0\%$ strict validity on full validation data, the protocol formally declares an explicit *No Eligible Backbone Found* outcome, documents the systemic formatting breakdown across candidate architectures, and halts prior to fine-tuning. A model is never selected automatically if it fails the 95.0% validity gate.
+- **Reproducible Inference-Throughput Protocol for Tie-Breaking:**
+  If two top contenders have validation `RelRMSE_replaced` within a 1.0% relative margin, ties are broken using predeclared secondary criteria, where inference throughput is measured under strict standardization:
+  1. *Hardware & Execution Isolation:* Evaluated sequentially on the exact same hardware, clearing MPS cache and performing OS garbage collection between models.
+  2. *Standardized Generation Settings:* Batch size = 1, greedy decoding (`temperature=0.0`, `do_sample=False`), `max_new_tokens=32`, bfloat16 precision.
+  3. *Fixed Warm-Up Procedure:* Exactly 5 warm-up inferences executed and discarded before timing begins.
+  4. *Fixed Evaluation Slice & Ordering:* An identical predeclared 50-sample slice and exact sample order is evaluated for every candidate. The 50 samples are deterministically selected from the 420-sample screening cohort using a fixed rule: the first 50 samples sorted by `(ticker, origin_date)` in ascending lexicographical order. This sample selection is frozen *a priori* before model benchmarking and is strictly invariant across models.
+  5. *Generation-Only Metric Definition:* Throughput (tokens/sec) is defined strictly as total generated output tokens divided by generation-only wall-clock time; prompt prefill time is explicitly excluded from the generation throughput metric.
+  6. *Device Synchronization & Multi-Run Averaging:* Synchronize MPS (`torch.mps.synchronize()`) immediately before and after each timed interval. The timed 50-sample measurement is repeated three times ($K=3$ runs), reporting the mean throughput and run-to-run variability.
+  7. *Strict Tie-Breaker Precedence:* Throughput is strictly the final tie-breaker; it can never override the primary $H=5$ Persistence-Replaced RelRMSE ranking outside the predeclared 1.0% relative tie margin.
+  8. *Deterministic Tie-Breaking Hierarchy:*
+     1. Primary tie-breaker: Higher Directional Accuracy (%) on the common valid subset.
+     2. Secondary tie-breaker: Higher Strict Validity Percentage (`valid_output_pct`).
+     3. Tertiary tie-breaker: Lower Parameter Count (favoring parameter efficiency for Phase 06 SFT).
+     4. Quaternary tie-breaker: Higher measured generation throughput (mean tokens/sec across 3 runs).
 
-### [PROPOSED CHANGE] Ranking with uncertainty
-- *What:* report each model's validation score with a confidence interval, and note when the top models are statistically indistinguishable.
-- *Why:* picking the winner by a tiny margin is fragile.
-- *Validity:* the selection rule must be stated in advance (for example, lowest validation NRMSE, with ties broken by a pre-declared criterion such as valid % or cost).
+### [SCREENING COHORT PROTOCOL]
+- Fixed 420-sample stratified cohort: 30 stocks (1 per sector across all 10 canonical sectors in India, South Africa, and USA) $\times$ 14 evenly spaced validation trading sessions across the first 118 common sessions (`step=9` across common index $k \in \{0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117\}$), leaving later sessions for boundary margin. All dates in documentation and the generated cohort manifest are required to derive deterministically from this identical common trading-session index logic.
 
 ### Outputs
-- Benchmark table (params, MAE, RMSE, NRMSE, relative RMSE, direction, bias, valid %, inference time, tokens, memory)
-- A frozen "selected backbone" record
+- Benchmark table (`valid_pct`, `invalid_pct`, common-valid-subset metrics, persistence-replaced metrics, params, throughput, memory).
+- A frozen "selected backbone" record in `research/results/phase_05/selected_backbone.json` and `research/RESEARCH_DECISIONS.md`.
 
 ### Gate
-Backbone selected and recorded. It is never swapped later.
+Backbone selected and permanently recorded. Never swapped or altered in later phases.
 
 ---
 

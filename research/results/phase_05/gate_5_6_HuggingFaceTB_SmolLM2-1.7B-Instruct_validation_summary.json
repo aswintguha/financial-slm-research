@@ -1,0 +1,46 @@
+{
+  "model_name": "SmolLM2 1.7B Instruct",
+  "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "revision": "31b70e2e869a7173562077fd711b654946d38674",
+  "license": "apache-2.0",
+  "parameter_count": 1711376384,
+  "status": "COMPLETED",
+  "samples_attempted": 20781,
+  "samples_completed": 20781,
+  "strict_valid_count": 20781,
+  "strict_valid_pct": 100.0,
+  "invalid_count": 0,
+  "invalid_pct": 0.0,
+  "fallback_extracted_count": 0,
+  "fallback_extracted_pct": 0.0,
+  "economic_bound_violations": 0,
+  "validation_eligibility_95pct_pass": true,
+  "forecasting_winner_declared": true,
+  "timing": {
+    "load_time_sec": 2.36,
+    "total_inference_time_sec": 17393.37,
+    "generation_only_time_sec": 17362.76,
+    "total_generated_tokens": 290936,
+    "mean_tokens_per_sec": 16.76
+  },
+  "persistence_baseline": {
+    "rmse": 0.093042,
+    "mae": 0.037751
+  },
+  "persistence_replaced": {
+    "rmse": 0.092978,
+    "mae": 0.038015,
+    "rel_rmse_vs_persistence": 0.999311
+  },
+  "common_valid_subset": {
+    "valid_samples": 20781,
+    "rmse": 0.092978,
+    "mae": 0.038015,
+    "persistence_rmse": 0.093042,
+    "persistence_mae": 0.037751,
+    "rel_rmse_vs_persistence": 0.999311,
+    "directional_accuracy_pct": 49.03,
+    "directional_accuracy_correct": 9675,
+    "directional_accuracy_eligible": 19733
+  }
+}

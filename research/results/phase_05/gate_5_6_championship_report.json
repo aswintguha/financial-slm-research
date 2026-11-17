@@ -1,0 +1,288 @@
+{
+  "benchmark": "Phase 05 Gate 5.6 Full Validation Championship Evaluation",
+  "timestamp_utc": "2026-11-17T04:52:37Z",
+  "validation_samples_count": 20781,
+  "eligibility_threshold_pct": 95.0,
+  "forecasting_winner_rule": "strict_valid_pct >= 95.0 AND persistence_replaced_RelRMSE < 1.000000",
+  "device": "mps",
+  "precision": "bfloat16",
+  "models_evaluated_count": 6,
+  "models_summary": [
+    {
+      "model_name": "Qwen 2.5 0.5B Instruct",
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "license": "apache-2.0",
+      "parameter_count": 494032768,
+      "status": "COMPLETED",
+      "samples_attempted": 20781,
+      "samples_completed": 20781,
+      "strict_valid_count": 20781,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "validation_eligibility_95pct_pass": true,
+      "forecasting_winner_declared": false,
+      "timing": {
+        "load_time_sec": 0.79,
+        "total_inference_time_sec": 11516.91,
+        "generation_only_time_sec": 11493.84,
+        "total_generated_tokens": 270050,
+        "mean_tokens_per_sec": 23.5
+      },
+      "persistence_baseline": {
+        "rmse": 0.093042,
+        "mae": 0.037751
+      },
+      "persistence_replaced": {
+        "rmse": 0.093326,
+        "mae": 0.038301,
+        "rel_rmse_vs_persistence": 1.003054
+      },
+      "common_valid_subset": {
+        "valid_samples": 20781,
+        "rmse": 0.093326,
+        "mae": 0.038301,
+        "persistence_rmse": 0.093042,
+        "persistence_mae": 0.037751,
+        "rel_rmse_vs_persistence": 1.003054,
+        "directional_accuracy_pct": 46.33,
+        "directional_accuracy_correct": 9142,
+        "directional_accuracy_eligible": 19733
+      }
+    },
+    {
+      "model_name": "Qwen 2.5 1.5B Instruct",
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "license": "apache-2.0",
+      "parameter_count": 1543714304,
+      "status": "COMPLETED",
+      "samples_attempted": 20781,
+      "samples_completed": 20781,
+      "strict_valid_count": 20781,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "validation_eligibility_95pct_pass": true,
+      "forecasting_winner_declared": false,
+      "timing": {
+        "load_time_sec": 3.62,
+        "total_inference_time_sec": 16594.26,
+        "generation_only_time_sec": 16566.62,
+        "total_generated_tokens": 266264,
+        "mean_tokens_per_sec": 16.07
+      },
+      "persistence_baseline": {
+        "rmse": 0.093042,
+        "mae": 0.037751
+      },
+      "persistence_replaced": {
+        "rmse": 0.094263,
+        "mae": 0.040143,
+        "rel_rmse_vs_persistence": 1.013122
+      },
+      "common_valid_subset": {
+        "valid_samples": 20781,
+        "rmse": 0.094263,
+        "mae": 0.040143,
+        "persistence_rmse": 0.093042,
+        "persistence_mae": 0.037751,
+        "rel_rmse_vs_persistence": 1.013122,
+        "directional_accuracy_pct": 46.3,
+        "directional_accuracy_correct": 9137,
+        "directional_accuracy_eligible": 19733
+      }
+    },
+    {
+      "model_name": "SmolLM2 1.7B Instruct",
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "license": "apache-2.0",
+      "parameter_count": 1711376384,
+      "status": "COMPLETED",
+      "samples_attempted": 20781,
+      "samples_completed": 20781,
+      "strict_valid_count": 20781,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "validation_eligibility_95pct_pass": true,
+      "forecasting_winner_declared": true,
+      "timing": {
+        "load_time_sec": 2.36,
+        "total_inference_time_sec": 17393.37,
+        "generation_only_time_sec": 17362.76,
+        "total_generated_tokens": 290936,
+        "mean_tokens_per_sec": 16.76
+      },
+      "persistence_baseline": {
+        "rmse": 0.093042,
+        "mae": 0.037751
+      },
+      "persistence_replaced": {
+        "rmse": 0.092978,
+        "mae": 0.038015,
+        "rel_rmse_vs_persistence": 0.999311
+      },
+      "common_valid_subset": {
+        "valid_samples": 20781,
+        "rmse": 0.092978,
+        "mae": 0.038015,
+        "persistence_rmse": 0.093042,
+        "persistence_mae": 0.037751,
+        "rel_rmse_vs_persistence": 0.999311,
+        "directional_accuracy_pct": 49.03,
+        "directional_accuracy_correct": 9675,
+        "directional_accuracy_eligible": 19733
+      }
+    },
+    {
+      "model_name": "Llama 3.2 3B Instruct",
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+      "license": "llama3.2",
+      "parameter_count": 3212749824,
+      "status": "COMPLETED",
+      "samples_attempted": 20781,
+      "samples_completed": 20781,
+      "strict_valid_count": 20670,
+      "strict_valid_pct": 99.4659,
+      "invalid_count": 111,
+      "invalid_pct": 0.5341,
+      "fallback_extracted_count": 111,
+      "fallback_extracted_pct": 0.5341,
+      "economic_bound_violations": 0,
+      "validation_eligibility_95pct_pass": true,
+      "forecasting_winner_declared": false,
+      "timing": {
+        "load_time_sec": 5.48,
+        "total_inference_time_sec": 25019.83,
+        "generation_only_time_sec": 24988.13,
+        "total_generated_tokens": 230896,
+        "mean_tokens_per_sec": 9.24
+      },
+      "persistence_baseline": {
+        "rmse": 0.093042,
+        "mae": 0.037751
+      },
+      "persistence_replaced": {
+        "rmse": 0.093567,
+        "mae": 0.039299,
+        "rel_rmse_vs_persistence": 1.005648
+      },
+      "common_valid_subset": {
+        "valid_samples": 20670,
+        "rmse": 0.093744,
+        "mae": 0.039301,
+        "persistence_rmse": 0.093217,
+        "persistence_mae": 0.037745,
+        "rel_rmse_vs_persistence": 1.005657,
+        "directional_accuracy_pct": 53.08,
+        "directional_accuracy_correct": 10415,
+        "directional_accuracy_eligible": 19622
+      }
+    },
+    {
+      "model_name": "Qwen 2.5 3B Instruct",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "license": "other",
+      "parameter_count": 3085938688,
+      "status": "COMPLETED",
+      "samples_attempted": 20781,
+      "samples_completed": 20781,
+      "strict_valid_count": 20780,
+      "strict_valid_pct": 99.9952,
+      "invalid_count": 1,
+      "invalid_pct": 0.0048,
+      "fallback_extracted_count": 1,
+      "fallback_extracted_pct": 0.0048,
+      "economic_bound_violations": 0,
+      "validation_eligibility_95pct_pass": true,
+      "forecasting_winner_declared": false,
+      "timing": {
+        "load_time_sec": 4.14,
+        "total_inference_time_sec": 30071.51,
+        "generation_only_time_sec": 30039.07,
+        "total_generated_tokens": 268337,
+        "mean_tokens_per_sec": 8.93
+      },
+      "persistence_baseline": {
+        "rmse": 0.093042,
+        "mae": 0.037751
+      },
+      "persistence_replaced": {
+        "rmse": 0.095393,
+        "mae": 0.042093,
+        "rel_rmse_vs_persistence": 1.025265
+      },
+      "common_valid_subset": {
+        "valid_samples": 20780,
+        "rmse": 0.095395,
+        "mae": 0.042096,
+        "persistence_rmse": 0.093044,
+        "persistence_mae": 0.037753,
+        "rel_rmse_vs_persistence": 1.025265,
+        "directional_accuracy_pct": 46.23,
+        "directional_accuracy_correct": 9123,
+        "directional_accuracy_eligible": 19733
+      }
+    },
+    {
+      "model_name": "Gemma 2 2B IT",
+      "model_id": "google/gemma-2-2b-it",
+      "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "license": "gemma",
+      "parameter_count": 2614341888,
+      "status": "COMPLETED",
+      "samples_attempted": 20781,
+      "samples_completed": 20781,
+      "strict_valid_count": 20781,
+      "strict_valid_pct": 100.0,
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "fallback_extracted_count": 0,
+      "fallback_extracted_pct": 0.0,
+      "economic_bound_violations": 0,
+      "validation_eligibility_95pct_pass": true,
+      "forecasting_winner_declared": false,
+      "timing": {
+        "load_time_sec": 3.55,
+        "total_inference_time_sec": 32207.63,
+        "generation_only_time_sec": 32180.65,
+        "total_generated_tokens": 306191,
+        "mean_tokens_per_sec": 9.51
+      },
+      "persistence_baseline": {
+        "rmse": 0.093042,
+        "mae": 0.037751
+      },
+      "persistence_replaced": {
+        "rmse": 0.093267,
+        "mae": 0.038545,
+        "rel_rmse_vs_persistence": 1.002416
+      },
+      "common_valid_subset": {
+        "valid_samples": 20781,
+        "rmse": 0.093267,
+        "mae": 0.038545,
+        "persistence_rmse": 0.093042,
+        "persistence_mae": 0.037751,
+        "rel_rmse_vs_persistence": 1.002416,
+        "directional_accuracy_pct": 53.37,
+        "directional_accuracy_correct": 10531,
+        "directional_accuracy_eligible": 19733
+      }
+    }
+  ]
+}
